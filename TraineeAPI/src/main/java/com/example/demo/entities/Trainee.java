@@ -11,6 +11,7 @@ public class Trainee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int traineeId;
+	private int abc=123;
 	@NotEmpty(message= "Name of the Trainee must not be empty")
 	private String traineeName;
 	@NotEmpty(message= "Domain of the Trainee must not be empty")
