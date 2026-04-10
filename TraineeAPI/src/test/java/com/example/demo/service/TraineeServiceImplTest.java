@@ -48,6 +48,16 @@ class TraineeServiceImplTest {
         verify(repo, times(1)).findAll();
     }
 
+    // @Test
+    // void testGetAllTrainees_Fail() {
+    //     when(repo.findAll()).thenReturn(Collections.emptyList());
+    
+    //     List<Trainee> result = service.getAllTrainees();
+    
+    //     // Will fail because size = 0
+    //     assertEquals(1, result.size());
+    // }
+
     @Test
     void testGetTraineeById() {
         when(repo.findById(1)).thenReturn(Optional.of(trainee));
@@ -92,10 +102,10 @@ class TraineeServiceImplTest {
 
     @Test
     void testDeleteTrainee() {
-        doNothing().when(repo).deleteById(1);
+        doNothing().when(repo).deleteById(2);
 
-        service.deleteTrainee(1);
+        service.deleteTrainee(2);
 
-        verify(repo, times(1)).deleteById(1);
+        verify(repo, times(1)).deleteById(2);
     }
 }
